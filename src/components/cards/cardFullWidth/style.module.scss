@@ -1,0 +1,28 @@
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  margin-bottom: 0.5rem;
+  border-radius: 15px;
+  align-items: center;
+
+  .iconCont {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 0.5rem;
+      height: 2rem;
+      width: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
