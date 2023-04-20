@@ -10,7 +10,7 @@ const initialState = {
 export const fetchWeatherData = createAsyncThunk(
   "weather/fetchData",
   async (location, thunkAPI) => {
-    const response = await axios.post("http://localhost:8000/weather", {
+    const response = await axios.post("http://localhost:8000/name", {
       address: location,
     });
     return response.data;

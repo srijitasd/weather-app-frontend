@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 
   img {
     width: 50%;
@@ -13,8 +13,13 @@
 
   .dataCont {
     width: 50%;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     margin-top: -1rem;
+  }
+
+  .minMax {
+    font-size: 12px;
+    margin-bottom: 0.75rem;
   }
 
   .temp {
@@ -34,7 +39,7 @@
 
   .forecast {
     font-size: 24px;
-    margin-left: 0.5rem;
+    // margin-left: 0.5rem;
     width: fit-content;
   }
 

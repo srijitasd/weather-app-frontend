@@ -2,7 +2,7 @@ import React from "react";
 import icon from "../../assets/icons/rain.svg";
 import styles from "./style.module.scss";
 
-function TemperatureComponent({ forecast, temp, feelsLike }) {
+function TemperatureComponent({ forecast, minMax, temp, feelsLike }) {
   // const fetchIcon = (forecast) => {
   //     if ( forecast === "Rainy") {
   //         return
@@ -10,8 +10,11 @@ function TemperatureComponent({ forecast, temp, feelsLike }) {
   // }
   return (
     <div className={styles.forecastCont}>
-      <img src={icon} alt="Rain" />
       <div className={styles.dataCont}>
+        <p className={styles.minMax}>
+          Day {minMax.max} <sup>&deg;</sup>
+          <span>&#x2022;</span> Night {minMax.min} <sup>&deg;</sup>
+        </p>
         <p className={styles.temp}>
           {Math.round(temp)} <span>&deg;C</span>
         </p>
@@ -23,6 +26,7 @@ function TemperatureComponent({ forecast, temp, feelsLike }) {
           </strong>
         </span>
       </div>
+      <img src={icon} alt="Rain" />
     </div>
   );
 }
