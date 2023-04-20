@@ -5,10 +5,10 @@ import styles from "./styles.module.scss";
 import { useEffect } from "react";
 import { fetchWeatherData } from "../../redux/feature/fetchWeather/weatherSlice";
 import { useDispatch, useSelector } from "react-redux";
-import useCurrentLocation from "../../hooks/useCurrentLocation";
+import useCurrentLocation from "../../features/Homepage/hooks/useCurrentLocation";
 
 function RootLayout() {
-  const { loading, data, error } = useSelector((state) => state.weather);
+  const { loading } = useSelector((state) => state.weather);
   const dispatch = useDispatch();
   const { lat, long } = useCurrentLocation();
   console.log(`${long},${lat}`);
@@ -17,7 +17,7 @@ function RootLayout() {
       lat !== undefined &&
       long !== undefined &&
       dispatch(fetchWeatherData(`${long},${lat}`));
-  }, [loading, lat, long]);
+  }, [loading, lat, long, dispatch]);
   return (
     <div className={styles.mainWrapper}>
       <Navigation />

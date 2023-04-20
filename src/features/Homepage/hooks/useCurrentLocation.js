@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function useCurrentLocation() {
   const [state, setState] = useState({ lat: undefined, long: undefined });

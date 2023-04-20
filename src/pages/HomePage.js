@@ -8,7 +8,7 @@ import windIcon from "../assets/icons/wind.svg";
 import humidityIcon from "../assets/icons/humidity.svg";
 
 function HomePage() {
-  const { loading, data, error } = useSelector((state) => state.weather);
+  const { loading, data } = useSelector((state) => state.weather);
   console.log(data);
 
   return loading && data === undefined ? (
