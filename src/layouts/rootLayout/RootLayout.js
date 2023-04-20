@@ -12,7 +12,10 @@ function RootLayout() {
   const dispatch = useDispatch();
   const { lat, long } = useCurrentLocation();
   useEffect(() => {
-    loading && lat !== null && long !== null && dispatch(fetchWeatherData(`${long},${lat}`));
+    loading &&
+      lat !== null &&
+      long !== null &&
+      dispatch(fetchWeatherData({ location: `${lat},${long}` }));
   }, [loading, lat, long, dispatch]);
   return (
     <div className={styles.mainWrapper}>
