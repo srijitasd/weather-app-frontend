@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 function useCurrentLocation() {
-  const [state, setState] = useState({ lat: undefined, long: undefined });
+  const [state, setState] = useState(() => {
+    return { lat: null, long: null };
+  });
+  console.log(state);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         setState((prev) => {
-          prev.lat = position.coords.latitude;
-          prev.long = position.coords.longitude;
+          return { ...prev, lat: position.coords.latitude, long: position.coords.longitude };
         });
       });
     } else {

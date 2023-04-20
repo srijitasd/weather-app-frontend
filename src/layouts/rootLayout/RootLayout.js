@@ -11,12 +11,8 @@ function RootLayout() {
   const { loading } = useSelector((state) => state.weather);
   const dispatch = useDispatch();
   const { lat, long } = useCurrentLocation();
-  console.log(`${long},${lat}`);
   useEffect(() => {
-    loading &&
-      lat !== undefined &&
-      long !== undefined &&
-      dispatch(fetchWeatherData(`${long},${lat}`));
+    loading && lat !== null && long !== null && dispatch(fetchWeatherData(`${long},${lat}`));
   }, [loading, lat, long, dispatch]);
   return (
     <div className={styles.mainWrapper}>
