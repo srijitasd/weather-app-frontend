@@ -6,7 +6,10 @@ function useCurrentLocation() {
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        setState({ ...state, lat: position.coords.latitude, long: position.coords.longitude });
+        setState((prev) => {
+          prev.lat = position.coords.latitude;
+          prev.long = position.coords.longitude;
+        });
       });
     } else {
       console.log("Not Available");

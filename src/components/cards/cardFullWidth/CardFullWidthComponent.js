@@ -5,7 +5,7 @@ function CardFullWidthComponent({ icon, title, data }) {
   return (
     <div className={styles.card}>
       <div className={styles.iconCont}>
-        <img src={icon} />
+        <img src={icon} alt="icon" />
         <p>{title}</p>
       </div>
       <p>
