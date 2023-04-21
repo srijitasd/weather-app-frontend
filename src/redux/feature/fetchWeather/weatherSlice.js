@@ -3,14 +3,25 @@ import axios from "axios";
 
 const initialState = {
   loading: true,
-  data: undefined,
+  data: {
+    location: null,
+    weather: {
+      date: null,
+      forecast: null,
+      minMax: { max: null, min: null },
+      temperature: null,
+      feelsLike: null,
+      wind: null,
+      humidity: null,
+    },
+  },
   error: null,
 };
 
 export const fetchWeatherData = createAsyncThunk(
   "weather/fetchData",
   async ({ location, type }, thunkAPI) => {
-    const response = await axios.post("https://weather-app-hcot.onrender.com/weather", {
+    const response = await axios.post("http://localhost:8000/weather", {
       location,
       type: type,
     });
@@ -18,6 +29,7 @@ export const fetchWeatherData = createAsyncThunk(
   }
 );
 
+// https://weather-app-hcot.onrender.com/weather
 const weatherSlice = createSlice({
   name: "weather",
   initialState,
@@ -25,7 +37,6 @@ const weatherSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchWeatherData.pending, (state, action) => {
       state.loading = true;
-      state.data = undefined;
       state.error = null;
     });
     builder.addCase(fetchWeatherData.fulfilled, (state, action) => {
@@ -35,7 +46,6 @@ const weatherSlice = createSlice({
     });
     builder.addCase(fetchWeatherData.rejected, (state, action) => {
       state.loading = true;
-      state.data = undefined;
       state.error = action.error.message;
     });
   },

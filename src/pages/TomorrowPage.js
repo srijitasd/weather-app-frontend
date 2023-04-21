@@ -8,8 +8,9 @@ import windIcon from "../assets/icons/wind.svg";
 import humidityIcon from "../assets/icons/humidity.svg";
 import BottomNavigationComponent from "../components/bottomNavigation/BottomNavigationComponent";
 
-function HomePage() {
+function TomorrowPage() {
   const { loading, data } = useSelector((state) => state.weather);
+  console.log(loading, data);
 
   return (
     <>
@@ -42,4 +43,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default TomorrowPage;

@@ -1,0 +1,21 @@
+@import "../../assets/scss/variables.scss";
+
+.navCont {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  .active {
+    font-weight: 600;
+  }
+
+  div {
+    a {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.inActive {
+  color: $textMuted;
+}

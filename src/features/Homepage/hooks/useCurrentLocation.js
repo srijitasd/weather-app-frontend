@@ -4,7 +4,6 @@ function useCurrentLocation() {
   const [state, setState] = useState(() => {
     return { lat: null, long: null };
   });
-  console.log(state);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
