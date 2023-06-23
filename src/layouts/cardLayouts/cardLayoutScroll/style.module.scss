@@ -1,0 +1,11 @@
+.pill_card_cont {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 1rem 0rem;
+  overflow-x: scroll;
+  position: relative;
+  left: -0.75rem;
+}

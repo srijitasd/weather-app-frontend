@@ -21,6 +21,7 @@ function RootLayout() {
     Snow: "linear-gradient(119.54deg, #ffffff 23.22%, #c7c7c7 99.52%)",
     Haze: "linear-gradient(119.54deg, rgb(226 245 212) 23.22%, rgb(177 198 207) 99.52%)",
   };
+
   useEffect(() => {
     loading &&
       lat !== null &&
@@ -28,6 +29,7 @@ function RootLayout() {
       dispatch(fetchWeatherData({ location: `${lat},${long}` }));
     data && setBackgroundColor(backgroundMap[data.weather.forecast]);
   }, [loading, lat, long, dispatch, backgroundColor]);
+
   return (
     <div className={styles.mainWrapper} style={{ background: backgroundColor }}>
       <Navigation />

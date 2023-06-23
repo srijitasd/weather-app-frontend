@@ -7,13 +7,17 @@ import CardlayoutFullComponent from "../layouts/cardLayouts/cardLayoutFull/Cardl
 import windIcon from "../assets/icons/wind.svg";
 import humidityIcon from "../assets/icons/humidity.svg";
 import BottomNavigationComponent from "../components/bottomNavigation/BottomNavigationComponent";
+import CardlayoutScrollComponent from "../layouts/cardLayouts/cardLayoutScroll/CardLayoutScrollComponent";
 
 function HomePage() {
   const { loading, data } = useSelector((state) => state.weather);
 
   return (
     <>
-      <LocDateComponent location={data.location} timestamp={data.weather.date} />
+      <LocDateComponent
+        location={data.location}
+        timestamp={data.weather.date}
+      />
       <TemperatureComponent
         forecast={data.weather.forecast}
         minMax={data.weather.minMax}
@@ -37,7 +41,37 @@ function HomePage() {
           },
         ]}
       />
+
       <BottomNavigationComponent />
+
+      <CardlayoutScrollComponent
+        data={[
+          {
+            time: "now",
+            temperature: 18,
+            icon: windIcon,
+            unit: "°C",
+          },
+          {
+            time: "now",
+            temperature: 18,
+            icon: windIcon,
+            unit: "°C",
+          },
+          {
+            time: "now",
+            temperature: 18,
+            icon: windIcon,
+            unit: "°C",
+          },
+          {
+            time: "now",
+            temperature: 18,
+            icon: windIcon,
+            unit: "°C",
+          },
+        ]}
+      />
     </>
   );
 }
